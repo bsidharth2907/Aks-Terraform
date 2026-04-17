@@ -1,5 +1,7 @@
 data "azuread_client_config" "current" {}
 
+// captures YOUR user's object_id who is running terraform or pipeline SP if running in CI/CD
+
 resource "azuread_application" "main" {
   display_name = var.service_principal_name
   owners       = [data.azuread_client_config.current.object_id]
