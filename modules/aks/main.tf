@@ -34,6 +34,7 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
     client_secret = var.client_secret
   }
 
+# AKS uses these to create Load Balancers, attach PersistentVolume disks, manage NICs 
 # to do: generate the ssh keys using tls_private_key
 # upload the key to key vault
 
